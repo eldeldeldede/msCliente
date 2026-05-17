@@ -45,4 +45,7 @@ public class Cliente {
     @JsonBackReference
     private Licencia licencia;
 
+    @Column(name = "id_usuario", nullable = false)
+    private Integer idUsuario;
+
 }
