@@ -38,9 +38,6 @@ public class Cliente {
     @Column(nullable = true)
     private String telefono;
 
-    @Column(nullable = true)
-    private String direccion;
-
     @Column(name = "usuario_id", nullable = false)
     private Integer usuarioId;
 

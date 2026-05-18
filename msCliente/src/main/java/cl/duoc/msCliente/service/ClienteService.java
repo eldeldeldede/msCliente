@@ -17,6 +17,7 @@ public class ClienteService {
     @Autowired
     private ClienteRepository repo;
 
+    @Autowired
     private UsuarioClient clientUsuario;;
 
     public List<Cliente> listarClientes(){
@@ -34,10 +35,6 @@ public class ClienteService {
     }
 
     public Cliente guardarCliente(Cliente cliente){
-        if(cliente.getLicencia() != null){
-            cliente.getLicencia().setCliente(cliente);
-        }
-
         return repo.save(cliente);
     }
 
@@ -55,12 +52,7 @@ public class ClienteService {
         cliente.setRut(clienteActualizado.getRut());
         cliente.setCorreo(clienteActualizado.getCorreo());
         cliente.setTelefono(clienteActualizado.getTelefono());
-        cliente.setDireccion(clienteActualizado.getDireccion());
-
-        if(clienteActualizado.getLicencia() != null){
-            cliente.getLicencia().setCliente(cliente);
-            cliente.setLicencia(clienteActualizado.getLicencia());
-        }
+        cliente.setLicencia(clienteActualizado.getLicencia());
 
         return repo.save(cliente);
     }
