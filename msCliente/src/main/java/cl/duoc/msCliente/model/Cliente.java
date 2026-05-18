@@ -3,13 +3,13 @@ package cl.duoc.msCliente.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,7 +41,8 @@ public class Cliente {
     @Column(name = "usuario_id", nullable = false)
     private Integer usuarioId;
 
-    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "licencia_id", nullable = false)
     @JsonBackReference
     private Licencia licencia;
 }

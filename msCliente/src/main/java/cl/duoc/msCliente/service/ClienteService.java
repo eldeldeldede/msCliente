@@ -59,9 +59,7 @@ public class ClienteService {
 
     public ClienteDTO buscarClienteDTO(Integer id){
         Cliente cliente = buscarCliente(id);
-
         UsuarioDTO usuario = clientUsuario.obtenerUsuarioDTO(cliente.getUsuarioId());
-        return new ClienteDTO(cliente.getId(), cliente.getNombre(), cliente.getRut(), usuario);
-        
+        return new ClienteDTO(cliente.getId(), cliente.getNombre(), cliente.getRut(), usuario.getEmail());
     }
 }

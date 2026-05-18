@@ -23,13 +23,13 @@ public class DataLoader {
                                         if (tipoLicenciaRepo.count() > 0) {
                                             System.out.println("Ya hay datos cargados");
                                         }else{
-                                            TipoLicencia tipo1 = new TipoLicencia(1, "Tipo A");
-                                            TipoLicencia tipo2 = new TipoLicencia(2, "Tipo B");
-                                            TipoLicencia tipo3 = new TipoLicencia(3, "Tipo C");
+                                            TipoLicencia tipo1 = new TipoLicencia(null, "Tipo A");
+                                            TipoLicencia tipo2 = new TipoLicencia(null, "Tipo B");
+                                            TipoLicencia tipo3 = new TipoLicencia(null, "Tipo C");
 
                                             Licencia licencia1 = new Licencia(null, "ABC123", new java.util.Date(), tipo1);
-                                            Licencia licencia2 = new Licencia(null, "DEF456", new java.util.Date(), tipo2 );
-                                            Licencia licencia3 = new Licencia(null, "GHI789", new java.util.Date(), tipo3 );
+                                            Licencia licencia2 = new Licencia(null, "DEF456", new java.util.Date(), tipo2);
+                                            Licencia licencia3 = new Licencia(null, "GHI789", new java.util.Date(), tipo3);
                                             
 
                                             Cliente cliente1 = new Cliente(null, "Juan Perez", "12345678-9", "juan.perez@duoc.cl", "+56912345678", 5, licencia1);
