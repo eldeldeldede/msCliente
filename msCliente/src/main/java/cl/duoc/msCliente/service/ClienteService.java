@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.duoc.msCliente.client.UsuarioClient;
+import cl.duoc.msCliente.dto.ClienteDTO;
+import cl.duoc.msCliente.dto.UsuarioDTO;
 import cl.duoc.msCliente.model.Cliente;
 import cl.duoc.msCliente.repository.ClienteRepository;
 
@@ -13,6 +16,8 @@ public class ClienteService {
 
     @Autowired
     private ClienteRepository repo;
+
+    private UsuarioClient clientUsuario;;
 
     public List<Cliente> listarClientes(){
         return repo.findAll();
@@ -58,5 +63,13 @@ public class ClienteService {
         }
 
         return repo.save(cliente);
+    }
+
+    public ClienteDTO buscarClienteDTO(Integer id){
+        Cliente cliente = buscarCliente(id);
+
+        UsuarioDTO usuario = clientUsuario.obtenerUsuarioDTO(cliente.getUsuarioId());
+        return new ClienteDTO(cliente.getId(), cliente.getNombre(), cliente.getRut(), usuario);
+        
     }
 }

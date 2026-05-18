@@ -41,11 +41,10 @@ public class Cliente {
     @Column(nullable = true)
     private String direccion;
 
-    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
-    @JsonBackReference
-    private Licencia licencia;
-
     @Column(name = "usuario_id", nullable = false)
     private Integer usuarioId;
 
+    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private Licencia licencia;
 }

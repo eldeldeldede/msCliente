@@ -67,10 +67,8 @@ public class ClienteController {
     @GetMapping("/dto/{id}") 
     public ResponseEntity<ClienteDTO> buscarDTO(@PathVariable Integer id){
         try {
-            Cliente cliente = service.buscarCliente(id);
-            ClienteDTO dto = new ClienteDTO(cliente.getId(), cliente.getNombre(), cliente.getRut());
-
-            return ResponseEntity.ok(dto);
+            ClienteDTO clienteDTO = service.buscarClienteDTO(id);
+            return ResponseEntity.ok(clienteDTO);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
