@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import cl.duoc.msCliente.dto.UsuarioDTO;
 
-@FeignClient(name = "msUsuario", url = "http://localhost:8090")
+@FeignClient(name = "msUsuario", url = "http://localhost:8088")
 public interface UsuarioClient {
 
     @GetMapping("/api/v1/usuarios/dto/{id}")
