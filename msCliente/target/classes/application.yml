@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: msCliente
+  datasource:
+    url: jdbc:mysql://localhost:3306/cliente_db
+    username: root
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8083
+
+springdoc:
+  api-docs:
+    enabled: true
+    version: openapi_3_0
+  swagger-ui:
+    enabled: true
+
+eureka:
+    client:
+        service-url:
+            defaultzone: http://localhost:8766/eureka/
+
+
