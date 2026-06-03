@@ -25,16 +25,22 @@ public class Licencia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description="ID unico de la licencia del cliente",
+            examples={"1"})
     private Integer idLicencia;
 
     @Column(nullable = false)
+    @Schema(description="numero de la licencia registrada")
     private String numLicencia;
 
     @Column(nullable = false)
+    @Schema(description="Fecha en la cual la licencia de conducir del cliente vence")
     private Date fechaVencimiento;
 
     @ManyToOne
     @JoinColumn(name = "tipo_licencia_id", nullable = false)
+    @Schema(description="segun el tipo de licencia, se muestra resultados especificos",
+            examples={"a,b,c"})
     @JsonBackReference
     private TipoLicencia tipoLicencia;
 
