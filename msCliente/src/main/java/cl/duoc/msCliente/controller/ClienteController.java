@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import cl.duoc.msCliente.dto.ClienteDTO;
 import cl.duoc.msCliente.model.Cliente;
 import cl.duoc.msCliente.service.ClienteService;
+import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
 @RequestMapping("api/v1/clientes")
@@ -26,6 +27,10 @@ public class ClienteController {
     private ClienteService service;
 
     @GetMapping
+    @Operation(
+        summary = "Obtener la lista de clientes registrados",
+        description = "Retorna la lista de clientes registrados en el sistema del Rent a Car."
+    )
     public ResponseEntity<List<Cliente>> listar(){
         try {
             List<Cliente> cliente = service.listarClientes();
@@ -36,6 +41,10 @@ public class ClienteController {
     }
 
     @PostMapping
+    @Operation(
+        summary = "Registrar un nuevo Cliente",
+        description = "Permite registrar un nuevo cliente en el sistema del Rent a Car."
+    )
     public ResponseEntity<Cliente> guardarCliente(@RequestBody Cliente cliente){
         try {
             Cliente clienteNuevo = service.guardarCliente(cliente);
@@ -46,6 +55,10 @@ public class ClienteController {
     }
 
     @GetMapping("/id/{id}") 
+    @Operation(
+        summary = "Buscar cliente por ID",
+        description = "Retorna los detalles de un cliente específico por su ID."
+    )
     public ResponseEntity<Cliente> buscarPorId(@PathVariable Integer id){
         try {
             Cliente cliente = service.buscarCliente(id);
@@ -56,6 +69,10 @@ public class ClienteController {
     }
 
     @GetMapping("/rut/{rut}")
+    @Operation(
+        summary = "Buscar empleado por RUT",
+        description = "Retorna los detalles de un empleado específico por su RUT."
+    )
     public ResponseEntity<Cliente> buscarPorRut(@PathVariable String rut){
         try {
             Cliente cliente = service.buscarPorRut(rut);
@@ -66,6 +83,10 @@ public class ClienteController {
     }
 
     @GetMapping("/dto/{id}") 
+    @Operation(
+        summary = "Buscar empleado por ID (DTO)",
+        description = "Retorna los detalles de un empleado específico por su ID en formato DTO."
+    )
     public ResponseEntity<ClienteDTO> buscarDTO(@PathVariable Integer id){
         try {
             ClienteDTO clienteDTO = service.buscarClienteDTO(id);
@@ -76,6 +97,10 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
+    @Operation(
+        summary = "Actualizar empleado",
+        description = "Permite actualizar los detalles de un empleado específico por su ID."
+    )
     public ResponseEntity<Cliente> actualizar(@PathVariable Integer id, @RequestBody Cliente clienteActualizado){
         try {
             Cliente cliente = service.actualizarCliente(id, clienteActualizado);
@@ -86,6 +111,10 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(
+        summary = "Eliminar empleado",
+        description = "Permite eliminar un empleado específico por su ID."
+    )
     public ResponseEntity<Void> eliminar(@PathVariable Integer id){
         try{
             service.eliminar(id);
