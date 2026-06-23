@@ -17,10 +17,11 @@ import cl.duoc.msCliente.dto.ClienteDTO;
 import cl.duoc.msCliente.model.Cliente;
 import cl.duoc.msCliente.service.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("api/v1/clientes")
-
+@Tag(name = "Cliente", description = "Operaciones relacionadas con clientes")
 public class ClienteController {
 
     @Autowired
