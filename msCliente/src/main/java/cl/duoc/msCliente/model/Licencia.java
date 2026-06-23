@@ -22,6 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "licencia")
+@Schema(description = "Representa la licencia de conducir de un cliente en el sistema")
 public class Licencia {
 
     @Id

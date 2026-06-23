@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
  @NoArgsConstructor
  @Entity
  @Table(name = "cliente")
-  @Schema(description="Representa un cliente en el sistema")
+@Schema(description="Representa un cliente en el sistema")
 public class Cliente {
 
     @Id
