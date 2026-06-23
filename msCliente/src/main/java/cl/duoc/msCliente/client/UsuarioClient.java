@@ -9,8 +9,8 @@ import cl.duoc.msCliente.dto.UsuarioDTO;
 @FeignClient(name = "msUsuario")
 public interface UsuarioClient {
 
-    @GetMapping("/api/v1/usuarios/dto/{id}")
-    public UsuarioDTO obtenerUsuarioDTO(@PathVariable ("id") Integer id);
+    @GetMapping("/api/v1/usuarios/dto/email/{email}")
+    public UsuarioDTO obtenerUsuarioDTO(@PathVariable ("email") String email);
 
 
 }

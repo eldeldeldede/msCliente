@@ -70,8 +70,8 @@ public class ClienteController {
 
     @GetMapping("/rut/{rut}")
     @Operation(
-        summary = "Buscar empleado por RUT",
-        description = "Retorna los detalles de un empleado específico por su RUT."
+        summary = "Buscar cliente por RUT",
+        description = "Retorna los detalles de un cliente específico por su RUT."
     )
     public ResponseEntity<Cliente> buscarPorRut(@PathVariable String rut){
         try {
@@ -84,8 +84,8 @@ public class ClienteController {
 
     @GetMapping("/dto/{id}") 
     @Operation(
-        summary = "Buscar empleado por ID (DTO)",
-        description = "Retorna los detalles de un empleado específico por su ID en formato DTO."
+        summary = "Buscar cliente por ID (DTO)",
+        description = "Retorna los detalles de un cliente específico por su ID en formato DTO."
     )
     public ResponseEntity<ClienteDTO> buscarDTO(@PathVariable Integer id){
         try {
@@ -98,8 +98,8 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     @Operation(
-        summary = "Actualizar empleado",
-        description = "Permite actualizar los detalles de un empleado específico por su ID."
+        summary = "Actualizar cliente",
+        description = "Permite actualizar los detalles de un cliente específico por su ID."
     )
     public ResponseEntity<Cliente> actualizar(@PathVariable Integer id, @RequestBody Cliente clienteActualizado){
         try {
@@ -112,8 +112,8 @@ public class ClienteController {
 
     @DeleteMapping("/{id}")
     @Operation(
-        summary = "Eliminar empleado",
-        description = "Permite eliminar un empleado específico por su ID."
+        summary = "Eliminar cliente",
+        description = "Permite eliminar un cliente específico por su ID."
     )
     public ResponseEntity<Void> eliminar(@PathVariable Integer id){
         try{

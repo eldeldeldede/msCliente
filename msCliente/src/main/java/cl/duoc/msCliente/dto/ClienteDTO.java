@@ -13,4 +13,5 @@ public class ClienteDTO {
     private String nombre;
     private String rut;
     private String email;
+    private Integer idUsuario;
 }
