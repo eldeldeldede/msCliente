@@ -38,12 +38,12 @@ public class Cliente {
     @Schema(description="RUT registrado con el fin de organizar la base de datos")
     private String rut;
 
-    @Column(nullable = true)
+    @Column(nullable = false, unique = true)
     @Schema(description="Correo con el cual se le informara todo el procedimiento al cliente")
     private String correo;
 
-    @Column(nullable = true)
-    @Schema(description="telefon o en el cual se contactasra en caso de cualquier imprevisto o emergencia")
+    @Column(nullable = false)
+    @Schema(description="telefono en el cual se contactasra en caso de cualquier imprevisto o emergencia")
     private String telefono;
 
     @Column(name = "usuario_id", nullable = false)
